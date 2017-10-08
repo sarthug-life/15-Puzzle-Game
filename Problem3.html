@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Hey BRO</title>
+        <script type="text/javascript">
+    var id_empty=15;
+    function press(x)
+    {
+        var II = Math.floor(id_empty/4);
+        var JJ = id_empty % 4;
+        var idx = Number(x.id);
+        var Ii = Math.floor(idx/4);
+        var Jj = idx % 4;
+        if((Math.abs(II - Ii) == 1 && JJ == Jj) ||
+           (Math.abs(JJ - Jj) == 1 && II == Ii)) {
+            document.getElementById(id_empty).className = "move";
+            document.getElementById(id_empty).innerHTML = x.innerHTML;
+            x.className = "move blank";
+            x.innerHTML = '';
+            id_empty = idx;
+    }
+    }
+      </script>
+  <style>
+          .move {
+              width: 60px;
+              height: 60px;
+              margin: 1px;
+              text-align: center;
+              background-color: limegreen;
+              font-weight: bold;
+              font-size:25px;
+              padding: 0px;
+          }
+          .blank {
+              background-color:black;
+          }
+        </style>
+    </head>
+
+    <body bgcolor="#DFDFDF">
+      <br><br>
+      <center><h1>15 Puzzle game board</h1></center>
+      <br><br>
+      <center>
+      <table  style="width:300px; height: 300px;border-width: 5px;margin:5px;border-style: solid; border-color: yellow;">
+        <tr>
+          <td id="0" class="move" onclick="press(this)">1</td>
+          <td id="1" class="move" onclick="press(this)">2</td>
+          <td id="2" class="move" onclick="press(this)">3</td>
+          <td id="3" class="move" onclick="press(this)">4</td>
+        </tr>
+        <tr>
+          <td id="4" class="move" onclick="press(this)">5</td>
+          <td id="5" class="move" onclick="press(this)">6</td>
+          <td id="6" class="move" onclick="press(this)">7</td>
+          <td id="7" class="move" onclick="press(this)">8</td>
+        </tr>
+        <tr>
+          <td id="8" class="move" onclick="press(this)">9</td>
+          <td id="9" class="move" onclick="press(this)">10</td>
+          <td id="10" class="move" onclick="press(this)">11</td>
+          <td id="11" class="move" onclick="press(this)">12</td>
+        </tr>
+        <tr>
+          <td id="12" class="move" onclick="press(this)">13</td>
+          <td id="13" class="move" onclick="press(this)">14</td>
+          <td id="14" class="move" onclick="press(this)">15</td>
+          <td id="15" class="move blank" onclick="press(this)"></td>
+        </tr>
+      </table>
+      </center>
+    </body>
+</html>
